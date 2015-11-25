@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/view_sort_list_item_percent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="left|top"
+        android:background="#44ff0000"
+        android:gravity="center"
+        android:text="width:30%,height:20%"
+        app:layout_heightPercent="20%"
+        app:layout_widthPercent="30%" />
+</FrameLayout>
