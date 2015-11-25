@@ -106,9 +106,7 @@ public class BubbleSortFragment extends BaseSortFragment {
         }
     }
     private void updateBack(int position){
-        for(int i=0;i<codeViews.size();i++){
-            codeViews.get(i).setBackgroundColor(getResources().getColor(android.R.color.transparent));
-        }
+        removeBack();
         codeViews.get(position).setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
     }
     private void removeBack(){
