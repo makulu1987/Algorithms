@@ -14,21 +14,21 @@ import java.lang.ref.WeakReference;
 /**
  * Created by xingzheng on 2015/11/25.
  */
-public class BaseFragment extends Fragment{
-    protected int getLayoutId(){
+public class BaseFragment extends Fragment {
+    protected int getLayoutId() {
         return -1;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if(getLayoutId()==-1)
+        if (getLayoutId() == -1)
             return super.onCreateView(inflater, container, savedInstanceState);
         else
-            return inflater.inflate(getLayoutId(),container,false);
+            return inflater.inflate(getLayoutId(), container, false);
     }
 
-    protected static class WeakHandler<T extends BaseFragment> extends Handler{
+    protected static class WeakHandler<T extends BaseFragment> extends Handler {
         protected WeakReference<T> weakReference;
 
         public WeakHandler(T t) {
@@ -37,12 +37,18 @@ public class BaseFragment extends Fragment{
 
         @Override
         public void handleMessage(Message msg) {
-            if(weakReference!=null&&weakReference.get()!=null) {
-                handleMessageIml(msg);
+            if (weakReference != null && weakReference.get() != null) {
+                weakReference.get().handleMessageIml(msg);
             }
         }
-        protected void handleMessageIml(Message msg){
+    }
 
-        }
+    protected void handleMessageIml(Message msg) {
+
+    }
+
+    public abstract class AlgorithmThread extends Thread {
+
+        public abstract void updateAndSleep(int what, int time);
     }
 }
