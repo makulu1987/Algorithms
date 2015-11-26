@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.david.algorithms.fragment.sorting.BubbleSortFragment;
+import com.david.algorithms.fragment.sorting.SelectSortFragment;
 
 /**
  * Created by xingzheng on 2015/11/25.
@@ -21,7 +22,8 @@ public class SecondActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(algorithmBean.name);
-        getFragmentManager().beginTransaction().add(R.id.content_container,new BubbleSortFragment(),"bubble").commit();
+//        getFragmentManager().beginTransaction().add(R.id.content_container,new BubbleSortFragment(),"bubble").commit();
+        getFragmentManager().beginTransaction().add(R.id.content_container,new SelectSortFragment(),"select").commit();
     }
 
 //    @Override
