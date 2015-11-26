@@ -1,0 +1,13 @@
+for (int i = 0; i < content.length - 1; i++) {
+    int selection=i;
+    for (int j = selection+1; j < content.length; j++) {
+        if (content[selection] > content[j]) {
+            selection=j;
+        }
+    }
+    if(selection!=i){
+        int temp=content[i];
+        content[i]=content[selection];
+        content[selection]=temp;
+    }
+}
