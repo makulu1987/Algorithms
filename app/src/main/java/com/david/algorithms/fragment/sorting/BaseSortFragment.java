@@ -10,6 +10,7 @@ import com.david.algorithms.fragment.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by xingzheng on 2015/11/25.
@@ -30,5 +31,6 @@ public class BaseSortFragment extends BaseFragment {
             sortingItems.add((TextView) sorting_list.getChildAt(i));
         }
     }
+    protected Random random = new Random();
 
 }

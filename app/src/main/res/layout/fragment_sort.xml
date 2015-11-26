@@ -21,7 +21,8 @@
             android:background="#0000ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_01"
@@ -32,7 +33,8 @@
             android:background="#1100ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_02"
@@ -43,7 +45,8 @@
             android:background="#2200ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_03"
@@ -54,7 +57,8 @@
             android:background="#3300ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_04"
@@ -65,7 +69,8 @@
             android:background="#4400ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_05"
@@ -76,7 +81,8 @@
             android:background="#5500ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_06"
@@ -87,7 +93,8 @@
             android:background="#6600ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_07"
@@ -98,7 +105,8 @@
             android:background="#7700ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_08"
@@ -109,7 +117,8 @@
             android:background="#8800ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_widthPercent="9%" />
 
         <TextView
             android:id="@+id/sorting_list_position_09"
@@ -120,15 +129,17 @@
             android:background="#9900ff"
             android:gravity="center"
             app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            app:layout_marginLeftPercent="1%"
+            app:layout_marginRightPercent="1%"
+            app:layout_widthPercent="9%" />
     </android.support.percent.PercentRelativeLayout>
 
     <LinearLayout
         android:id="@+id/sorting_list_code_container"
-        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.7"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        android:padding="16dp" />
 
 </LinearLayout>
