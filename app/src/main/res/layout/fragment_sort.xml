@@ -134,12 +134,11 @@
             app:layout_widthPercent="9%" />
     </android.support.percent.PercentRelativeLayout>
 
-    <LinearLayout
+    <ListView
         android:id="@+id/sorting_list_code_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.7"
-        android:orientation="vertical"
         android:padding="16dp" />
 
 </LinearLayout>

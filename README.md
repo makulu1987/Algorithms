@@ -1,3 +1,3 @@
 # Algorithms
-Common algorithms visualization
+Common algorithms visualization \n
 algorithms from visualgo(http://zh.visualgo.net/)
