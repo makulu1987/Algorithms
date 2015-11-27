@@ -1,18 +1,6 @@
 package com.david.algorithms.fragment.sorting;
 
-import android.os.Bundle;
 import android.os.Message;
-import android.support.percent.PercentRelativeLayout;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.david.algorithms.R;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 /**
  * Created by xingzheng on 2015/11/25.
@@ -24,13 +12,7 @@ public class BubbleSortFragment extends BaseSortFragment {
         return "bubble_sort";
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        startSorting();
-    }
-
-    private void startSorting() {
+    public void startSorting() {
         new SortAlgorithmThread() {
             @Override
             public void run() {

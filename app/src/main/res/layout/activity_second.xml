@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.david.algorithms.SecondActivity">
 
     <include layout="@layout/content_title_bar" />
 
-    <FrameLayout
+    <ScrollView
         android:id="@+id/content_container"
-        android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bubble_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Bubble Sort" />
+
+            <TextView
+                android:id="@+id/select_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Select Sort" />
+
+            <TextView
+                android:id="@+id/insert_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Insert Sort" />
+
+            <TextView
+                android:id="@+id/merge_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Merge Sort" />
+
+            <TextView
+                android:id="@+id/quick_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Quick Sort" />
+
+            <TextView
+                android:id="@+id/random_quick_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Random Quick Sort" />
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -39,6 +39,7 @@ public abstract class BaseSortFragment extends BaseFragment {
     protected WeakHandler<BaseSortFragment> weakHandler;
     protected SortCodeListAdapter sortCodeListAdapter;
     protected ListView sorting_list_code_container;
+    private ViewGroup sorted;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +57,13 @@ public abstract class BaseSortFragment extends BaseFragment {
     }
 
     protected abstract String getCodeAssetName();
-
+    protected abstract void startSorting();
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ViewGroup sorting_list = (ViewGroup) view.findViewById(R.id.sorting_list);
+        ViewGroup origin= (ViewGroup) view.findViewById(R.id.sorting_list_origin);
+        sorted= (ViewGroup) view.findViewById(R.id.sorting_list_sorted);
         for (int i = 0; i < sorting_list.getChildCount(); i++) {
             sortingItems.add((TextView) sorting_list.getChildAt(i));
         }
@@ -68,6 +71,16 @@ public abstract class BaseSortFragment extends BaseFragment {
         sorting_list_code_container.setAdapter(sortCodeListAdapter);
         initContent();
         initCode();
+
+        for(int i=0;i<origin.getChildCount();i++){
+            ((TextView)origin.getChildAt(i)).setText(content[i]+"");
+        }
+        view.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSorting();
+            }
+        });
     }
 
     private void initContent() {
@@ -75,7 +88,6 @@ public abstract class BaseSortFragment extends BaseFragment {
         for (int i = 0; i < 10; i++) {
             content[i] = getRandomInt();
         }
-        updateContent();
     }
 
     protected int getRandomInt() {
@@ -117,11 +129,18 @@ public abstract class BaseSortFragment extends BaseFragment {
         sortCodeListAdapter.setCodes(codes);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateContent();
+    }
+
     protected void updateContent() {
         for (int i = 0; i < 10; i++) {
             PercentRelativeLayout.LayoutParams lp = (PercentRelativeLayout.LayoutParams) sortingItems.get(i).getLayoutParams();
             lp.getPercentLayoutInfo().heightPercent = ((float) content[i]) / 50;
             sortingItems.get(i).setLayoutParams(lp);
+            ((TextView)sorted.getChildAt(i)).setText(content[i]+"");
         }
     }
 
