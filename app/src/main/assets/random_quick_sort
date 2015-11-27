@@ -1,10 +1,12 @@
-private void quickSort(int[] array, int low, int high) {
+private void rQuickSort(int[] array, int low, int high) {
     if (high <= low) {
         return;
     }
+    int r = random.nextInt(high - low) + low;
+    swap(array, r, low);
     int key = partition(array, low, high);
-    quickSort(array, 0, key - 1);
-    quickSort(array, key + 1, high);
+    rQuickSort(array, 0, key - 1);
+    rQuickSort(array, key + 1, high);
 }
 
 private int partition(int[] array, int low, int high) {

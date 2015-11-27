@@ -1,10 +1,6 @@
 package com.david.algorithms.fragment.sorting;
 
-import android.os.Bundle;
 import android.os.Message;
-import android.view.View;
-
-import com.david.algorithms.R;
 
 /**
  * Created by xingzheng on 2015/11/25.
@@ -15,19 +11,7 @@ public class QuickSortFragment extends BaseSortFragment {
         return "quick_sort";
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-//        startSorting();
-        view.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startSorting();
-            }
-        });
-    }
-
-    private void startSorting() {
+    public void startSorting() {
         new SortAlgorithmThread() {
             @Override
             public void run() {
@@ -40,6 +24,12 @@ public class QuickSortFragment extends BaseSortFragment {
                 if (high <= low) {
                     return;
                 }
+                int key = partition(array, low, high);
+                quickSort(array, 0, key - 1);
+                quickSort(array, key + 1, high);
+            }
+
+            private int partition(int[] array, int low, int high) {
                 int key = array[low];
                 int j = high;
                 int i = low;
@@ -51,15 +41,18 @@ public class QuickSortFragment extends BaseSortFragment {
                         i++;
                     }
                     if (i < j) {
-                        int temp = array[j];
-                        array[j] = array[i];
-                        array[i] = temp;
+                        swap(array, i, j);
                     }
                 }
                 array[low] = array[i];
                 array[i] = key;
-                quickSort(array, low, i - 1);
-                quickSort(array, i + 1, high);
+                return i;
+            }
+
+            private void swap(int[] array, int first, int second) {
+                int temp = array[first];
+                array[first] = array[second];
+                array[second] = temp;
             }
         }.start();
 

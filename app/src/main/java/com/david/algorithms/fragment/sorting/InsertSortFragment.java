@@ -1,8 +1,6 @@
 package com.david.algorithms.fragment.sorting;
 
-import android.os.Bundle;
 import android.os.Message;
-import android.view.View;
 
 /**
  * Created by xingzheng on 2015/11/25.
@@ -14,30 +12,11 @@ public class InsertSortFragment extends BaseSortFragment {
         return "insert_sort";
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        startSorting();
-    }
-
-
-    private void startSorting() {
+    public void startSorting() {
         new SortAlgorithmThread() {
 
             @Override
             public void run() {
-//                for (int i = 1; i < content.length; i++) {
-//                    for (int j = 0; j < i; j++) {
-//                        if (content[i] < content[j]) {
-//                            int temp = content[i];
-//                            for (int k = i; k > j; k--) {
-//                                content[k] = content[k - 1];
-//                            }
-//                            content[j] = temp;
-//                        }
-//                    }
-//                    updateAndSleep(11, 500);
-//                }
                 for (int i = 1; i < content.length; i++) {
                     updateAndSleep(0, 100);
                     for (int j = 0; j < i; j++) {
