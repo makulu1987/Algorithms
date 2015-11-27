@@ -1,0 +1,25 @@
+private void quickSort(int[] array, int low, int high) {
+    if (high <= low) {
+        return;
+    }
+    int key = array[low];
+    int j = high;
+    int i = low;
+    while (i != j) {
+        while (array[j] >= key && i < j) {
+            j--;
+        }
+        while (array[i] <= key && i < j) {
+            i++;
+        }
+        if (i < j) {
+            int temp = array[j];
+            array[j] = array[i];
+            array[i] = temp;
+        }
+    }
+    array[low] = array[i];
+    array[i] = key;
+    quickSort(array, low, i - 1);
+    quickSort(array, i + 1, high);
+}
