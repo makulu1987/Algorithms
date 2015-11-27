@@ -1,0 +1,41 @@
+for (int i = 1; i < content.length; i *= 2) {
+    mergeSort(content, i, content.length);
+}
+private void mergeSort(int[] originArray, int gap, int length) {
+    int i = 0;
+    for (i = 0; i + 2 * gap <= length; i += 2 * gap) {
+        merge(originArray, i, i + gap - 1, i + 2 * gap - 1);
+    }
+    if (i + gap < length) {
+        merge(originArray, i, i + gap - 1, length - 1);
+    }
+}
+private void merge(int[] originArray, int low, int mid, int high) {
+    int i = low;
+    int j = mid + 1;
+    int k = 0;
+    int tempArray[] = new int[high - low + 1];
+    while (i <= mid && j <= high) {
+        if (originArray[i] < originArray[j]) {
+            tempArray[k] = originArray[i];
+            i++;
+        } else {
+            tempArray[k] = originArray[j];
+            j++;
+        }
+        k++;
+    }
+    while (i <= mid) {
+        tempArray[k] = originArray[i];
+        i++;
+        k++;
+    }
+    while (j <= high) {
+        tempArray[k] = originArray[j];
+        j++;
+        k++;
+    }
+    for (int m = low; m <= high; m++) {
+        originArray[m] = tempArray[m - low];
+    }
+}
