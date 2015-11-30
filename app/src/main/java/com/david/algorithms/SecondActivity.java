@@ -48,6 +48,9 @@ public class SecondActivity extends AppCompatActivity {
             case R.id.count_sort:
                 intent.putExtra(SortActivity.SORT_BEAN,"count_sort");
                 break;
+            case R.id.radix_sort:
+                intent.putExtra(SortActivity.SORT_BEAN,"radix_sort");
+                break;
         }
         startActivity(intent);
     }

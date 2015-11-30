@@ -10,6 +10,7 @@ import com.david.algorithms.fragment.sorting.InsertSortFragment;
 import com.david.algorithms.fragment.sorting.MergeSortFragment;
 import com.david.algorithms.fragment.sorting.QuickSortFragment;
 import com.david.algorithms.fragment.sorting.RQuickSortFragment;
+import com.david.algorithms.fragment.sorting.RadixSortFragment;
 import com.david.algorithms.fragment.sorting.SelectSortFragment;
 
 /**
@@ -47,6 +48,9 @@ public class SortActivity extends AppCompatActivity {
                 break;
             case "count_sort":
                 getFragmentManager().beginTransaction().add(R.id.content_container, new CountSortFragment(), name).commit();
+                break;
+            case "radix_sort":
+                getFragmentManager().beginTransaction().add(R.id.content_container, new RadixSortFragment(), name).commit();
                 break;
         }
     }
