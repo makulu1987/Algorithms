@@ -45,6 +45,9 @@ public class SecondActivity extends AppCompatActivity {
             case R.id.random_quick_sort:
                 intent.putExtra(SortActivity.SORT_BEAN,"random_quick_sort");
                 break;
+            case R.id.count_sort:
+                intent.putExtra(SortActivity.SORT_BEAN,"count_sort");
+                break;
         }
         startActivity(intent);
     }

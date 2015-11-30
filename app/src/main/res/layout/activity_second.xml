@@ -68,6 +68,13 @@
                 android:gravity="center"
                 android:onClick="doClick"
                 android:text="Random Quick Sort" />
+            <TextView
+                android:id="@+id/count_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Count Sort" />
         </LinearLayout>
     </ScrollView>
 
