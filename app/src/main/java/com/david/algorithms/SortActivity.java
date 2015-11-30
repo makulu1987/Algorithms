@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.david.algorithms.fragment.sorting.BubbleSortFragment;
+import com.david.algorithms.fragment.sorting.CountSortFragment;
 import com.david.algorithms.fragment.sorting.InsertSortFragment;
 import com.david.algorithms.fragment.sorting.MergeSortFragment;
 import com.david.algorithms.fragment.sorting.QuickSortFragment;
@@ -43,6 +44,9 @@ public class SortActivity extends AppCompatActivity {
                 break;
             case "random_quick_sort":
                 getFragmentManager().beginTransaction().add(R.id.content_container, new RQuickSortFragment(), name).commit();
+                break;
+            case "count_sort":
+                getFragmentManager().beginTransaction().add(R.id.content_container, new CountSortFragment(), name).commit();
                 break;
         }
     }
