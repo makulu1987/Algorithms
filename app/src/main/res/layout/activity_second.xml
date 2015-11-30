@@ -75,6 +75,13 @@
                 android:gravity="center"
                 android:onClick="doClick"
                 android:text="Count Sort" />
+            <TextView
+                android:id="@+id/radix_sort"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:text="Radix Sort" />
         </LinearLayout>
     </ScrollView>
 
