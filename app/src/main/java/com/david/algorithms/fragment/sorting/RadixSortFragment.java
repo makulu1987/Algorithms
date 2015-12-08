@@ -1,7 +1,5 @@
 package com.david.algorithms.fragment.sorting;
 
-import android.os.Message;
-
 /**
  * Created by xingzheng on 2015/11/25.
  */
@@ -39,7 +37,7 @@ public class RadixSortFragment extends BaseSortFragment {
                     m++;
                 }
 
-                updateAndSleep(100, 10);
+                updateViewAndSleep(10);
             }
 
 //            private void sort(int[] number, int d) {
@@ -67,17 +65,5 @@ public class RadixSortFragment extends BaseSortFragment {
 //                }
 //            }
         }.start();
-    }
-
-    @Override
-    protected void handleMessageIml(Message msg) {
-        switch (msg.what) {
-            case 100:
-                updateContent();
-                break;
-            default:
-                sortCodeListAdapter.setSelection(msg.what);
-                break;
-        }
     }
 }

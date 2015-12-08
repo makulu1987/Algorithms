@@ -1,7 +1,5 @@
 package com.david.algorithms.fragment.sorting;
 
-import android.os.Message;
-
 /**
  * Created by xingzheng on 2015/11/25.
  */
@@ -18,42 +16,45 @@ public class SelectSortFragment extends BaseSortFragment {
             @Override
             public void run() {
                 for (int i = 0; i < content.length - 1; i++) {
-                    updateAndSleep(0, 100);
+                    updateCodeAndSleep(0, 100);
                     int selection = i;
-                    updateAndSleep(1, 100);
+                    select(selection);
+                    updateCodeAndSleep(1, 100);
                     for (int j = selection + 1; j < content.length; j++) {
-                        updateAndSleep(2, 100);
+                        select(j);
+                        updateCodeAndSleep(2, 100);
                         if (content[selection] > content[j]) {
-                            updateAndSleep(3, 100);
+                            updateCodeAndSleep(3, 0);
+                            updateViewAndSleep(j, 200);
+                            if(selection!=i){
+                                unselect(selection);
+                            }
                             selection = j;
-                            updateAndSleep(4, 100);
+                            updateCodeAndSleep(4, 100);
+                        }else{
+                            unselect(j);
                         }
+                        updateCodeAndSleep(5, 100);
                     }
+                    updateCodeAndSleep(6, 100);
                     if (selection != i) {
-                        updateAndSleep(6, 100);
+                        updateCodeAndSleep(7, 100);
                         int temp = content[i];
-                        updateAndSleep(7, 100);
+                        updateCodeAndSleep(8, 100);
                         content[i] = content[selection];
-                        updateAndSleep(8, 100);
+                        updateCodeAndSleep(9, 100);
                         content[selection] = temp;
-                        updateAndSleep(9, 100);
+                        updateCodeAndSleep(10, 100);
+                        swap(selection,i);
                     }
-                    updateAndSleep(11, 500);
+                    unselect(selection,i);
+                    updateCodeAndSleep(11, 100);
                 }
-                weakHandler.sendEmptyMessage(12);
+                updateCodeAndSleep(12, 100);
+                updateCodeAndSleep(-1, 100);
             }
         }.start();
 
     }
 
-    @Override
-    protected void handleMessageIml(Message msg) {
-        switch (msg.what) {
-            case 11:
-                updateContent();
-                break;
-            default:
-                break;
-        }
-    }
 }

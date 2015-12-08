@@ -1,268 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/sorting_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_heightPercent="40%" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/sorting_code"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        app:layout_heightPercent="60%" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/start" />
-    <android.support.percent.PercentRelativeLayout
-        android:id="@+id/sorting_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/sorting_list_position_00"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:background="#0000ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_01"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_00"
-            android:background="#1100ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_02"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_01"
-            android:background="#2200ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_03"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_02"
-            android:background="#3300ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_04"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_03"
-            android:background="#4400ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_05"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_04"
-            android:background="#5500ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_06"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_05"
-            android:background="#6600ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_07"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_06"
-            android:background="#7700ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_08"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_07"
-            android:background="#8800ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_widthPercent="9%" />
-
-        <TextView
-            android:id="@+id/sorting_list_position_09"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/sorting_list_position_08"
-            android:background="#9900ff"
-            android:gravity="center"
-            app:layout_heightPercent="10%"
-            app:layout_marginLeftPercent="1%"
-            app:layout_marginRightPercent="1%"
-            app:layout_widthPercent="9%" />
-    </android.support.percent.PercentRelativeLayout>
-    <LinearLayout
-        android:id="@+id/sorting_list_origin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:gravity="center" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/sorting_list_sorted"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:gravity="center" />
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/sorting_list_code_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.7"
-        android:padding="16dp" />
-
-</LinearLayout>
+</android.support.percent.PercentRelativeLayout>

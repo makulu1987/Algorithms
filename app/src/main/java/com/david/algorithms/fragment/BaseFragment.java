@@ -49,6 +49,8 @@ public class BaseFragment extends Fragment {
 
     public abstract class AlgorithmThread extends Thread {
 
-        public abstract void updateAndSleep(int what, int time);
+        public abstract void updateViewAndSleep(int time);
+        public abstract void updateViewAndSleep(int arg1,int time);
+        public abstract void updateCodeAndSleep(int arg1,int time);
     }
 }

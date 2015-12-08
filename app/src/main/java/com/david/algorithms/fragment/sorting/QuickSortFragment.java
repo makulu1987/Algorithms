@@ -1,7 +1,5 @@
 package com.david.algorithms.fragment.sorting;
 
-import android.os.Message;
-
 /**
  * Created by xingzheng on 2015/11/25.
  */
@@ -16,8 +14,7 @@ public class QuickSortFragment extends BaseSortFragment {
             @Override
             public void run() {
                 quickSort(content, 0, content.length - 1);
-                updateAndSleep(100, 100);
-                weakHandler.sendEmptyMessage(6);
+                updateViewAndSleep(0);
             }
 
             private void quickSort(int[] array, int low, int high) {
@@ -58,16 +55,4 @@ public class QuickSortFragment extends BaseSortFragment {
 
     }
 
-    @Override
-    protected void handleMessageIml(Message msg) {
-        switch (msg.what) {
-            case 100:
-                updateContent();
-                break;
-            default:
-//                sorting_list_code_container.setSelection(msg.what);
-//                sortCodeListAdapter.setSelection(msg.what);
-                break;
-        }
-    }
 }

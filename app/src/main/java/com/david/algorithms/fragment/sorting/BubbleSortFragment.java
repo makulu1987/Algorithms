@@ -1,7 +1,5 @@
 package com.david.algorithms.fragment.sorting;
 
-import android.os.Message;
-
 /**
  * Created by xingzheng on 2015/11/25.
  */
@@ -17,36 +15,33 @@ public class BubbleSortFragment extends BaseSortFragment {
             @Override
             public void run() {
                 for (int i = 0; i < content.length - 1; i++) {
-                    updateAndSleep(0, 100);
+                    updateCodeAndSleep(0, 100);
                     for (int j = 0; j < content.length - i - 1; j++) {
-                        updateAndSleep(1, 100);
+                        updateCodeAndSleep(1, 100);
+                        select(j);
                         if (content[j] > content[j + 1]) {
-                            updateAndSleep(2, 100);
+                            updateCodeAndSleep(2, 100);
+                            select(j+1);
                             int temp = content[j];
-                            updateAndSleep(3, 100);
+                            updateCodeAndSleep(3, 100);
                             content[j] = content[j + 1];
-                            updateAndSleep(4, 100);
+                            updateCodeAndSleep(4, 100);
                             content[j + 1] = temp;
-                            updateAndSleep(5, 100);
-                            updateAndSleep(6, 500);
+                            updateCodeAndSleep(5, 100);
+                            swap(j,j+1);
+                            unselect(j+1);
                         }
+                        unselect(j);
+                        updateCodeAndSleep(6, 100);
                     }
+                    fixPosition(content.length-1-i);
+                    updateCodeAndSleep(7, 100);
                 }
-                weakHandler.sendEmptyMessage(7);
+                updateCodeAndSleep(8, 100);
+                updateCodeAndSleep(-1, 100);
             }
         }.start();
 
     }
 
-    @Override
-    protected void handleMessageIml(Message msg) {
-        switch (msg.what) {
-            case 6:
-                updateContent();
-                break;
-            default:
-//                sorting_list_code_container.setSelection(msg.what);
-                break;
-        }
-    }
 }
